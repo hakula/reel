@@ -18,6 +18,8 @@ class CreateSkillsTable extends Migration
             $table->integer('applicant_id')->unsigned();
             $table->string('name');
             $table->timestamps();
+            
+            $table->foreign('applicant_id')->references('id')->on('applicants')->onDelete('cascade');
         });
     }
 
