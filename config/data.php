@@ -8,48 +8,42 @@ return [
     |--------------------------------------------------------------------------
     */	
     "applicants" => [
-        [
-            "id" => 1,
+        [            
             "name" => "Russ Waters",
             "email" => "russ@russwaters.com",
             "website" => "russwaters.com",
             "cover_letter" => "Lorem ipsum Laborum adipisicing exercitation laboris enim sint ullamco sint id mollit commodo anim dolor enim occaecat pariatur proident Duis ut in.",
             "job_id" => 1
         ],
-        [
-            "id" => 2,
+        [         
             "name" => "Dakota Kautzer",
             "email" => "dakota@dakotakautzer.com",
             "website" => "dakotakautzer.com",
             "cover_letter" => "Lorem ipsum Id culpa sit labore laborum dolore eiusmod dolor commodo ad dolore mollit voluptate aliquip in amet reprehenderit in culpa tempor magna est ullamco eu eiusmod exercitation in cillum id id.",
             "job_id" => 1
         ],
-        [
-            "id" => 3,
+        [         
             "name" => "Cortez Hilpert",
             "email" => "cortez@cortezhilpert.com",
             "website" => "cortezhilpert.com",
             "cover_letter" => "Lorem ipsum Ex quis cillum tempor ut veniam ullamco aliqua aliquip dolor cupidatat pariatur culpa voluptate tempor officia voluptate minim est amet aliquip enim nulla et laboris officia nisi mollit ut.",
             "job_id" => 1
         ],
-        [
-            "id" => 4,
+        [         
             "name" => "Katarina Mills",
             "email" => "katarina@katarinamills.com",
             "website" => "katarinamills.com",
             "cover_letter" => "Lorem ipsum Dolore laboris dolor non adipisicing qui consequat adipisicing tempor eu nulla elit in anim do aute in nulla velit laboris consectetur laborum ex Ut cillum officia in veniam Duis sint occaecat consectetur cillum sint ea cupidatat in adipisicing.",
             "job_id" => 1
         ],
-        [
-            "id" => 5,
+        [         
             "name" => "Jordane Hill",
             "email" => "jordane@jordanehill.com",
             "website" => "jordanehill.com",
             "cover_letter" => "Lorem ipsum In veniam eiusmod voluptate dolore esse mollit qui sed occaecat sint voluptate occaecat id labore dolore quis sunt esse magna elit occaecat commodo ut cupidatat reprehenderit fugiat consectetur id ut incididunt dolore aliqua ex et proident sed.",
             "job_id" => 2
         ],
-        [
-            "id" => 6,
+        [        
             "name" => "Kraig Oga",
             "email" => "kraig@kraigoga.com",
             "website" => "kraigoga.com",
@@ -57,7 +51,6 @@ return [
             "job_id" => 2
         ],
         [
-            "id" => 7,
             "name" => "Hilbert Price",
             "email" => "hilbert@hilbertprice.com",
             "website" => "hilbertprice.com",
@@ -65,7 +58,6 @@ return [
             "job_id" => 2
         ],
         [
-            "id" => 8,
             "name" => "Mikel Murazik",
             "email" => "mikel@mikelmurazik.com",
             "website" => "mikelmurazik.com",
@@ -81,11 +73,9 @@ return [
     */
     "jobs" => [
         [
-            "id" => 1,
             "name" => "Web Developer"
         ],
         [
-            "id" => 2,
             "name" => "Web Designer"
         ]
     ],
@@ -97,67 +87,54 @@ return [
     */
     "skills" => [
         [
-            "id" => 1,
             "name" => "Java",
             "applicant_id" => 1
         ],
         [
-            "id" => 2,
             "name" => "C",
             "applicant_id" => 1
         ],
         [
-            "id" => 3,
             "name" => "C++",
             "applicant_id" => 1
         ],
         [
-            "id" => 4,
             "name" => "Javascript",
             "applicant_id" => 2
         ],
         [
-            "id" => 5,
             "name" => "C",
             "applicant_id" => 2
         ],
         [
-            "id" => 6,
             "name" => "PHP",
             "applicant_id" => 3
         ],
         [
-            "id" => 7,
             "name" => "C",
             "applicant_id" => 4
         ],
         [
-            "id" => 8,
             "name" => "Python",
             "applicant_id" => 4
         ],
         [
-            "id" => 9,
             "name" => "HTML",
             "applicant_id" => 4
         ],
         [
-            "id" => 10,
             "name" => "Fireworks",
             "applicant_id" => 5
         ],
         [
-            "id" => 11,
             "name" => "Fireworks",
             "applicant_id" => 6
         ],
         [
-            "id" => 12,
             "name" => "Illustrator",
             "applicant_id" => 7
         ],
         [
-            "id" => 13,
             "name" => "Fireworks",
             "applicant_id" => 8
         ]
