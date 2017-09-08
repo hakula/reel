@@ -15,7 +15,7 @@ class ApplicantsTableSeeder extends Seeder
     {
 		Job::chunk(50, function($jobs) {
 		    $jobs->each(function($job) {
-			    $job->applicants()->saveMany(factory(Applicant::class, rand(5, 10))->make());
+			    $job->applicants()->saveMany(factory(Applicant::class, rand(2, 5))->make());
 		    });		    
 	    });
     }

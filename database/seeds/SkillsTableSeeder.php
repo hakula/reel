@@ -15,7 +15,7 @@ class SkillsTableSeeder extends Seeder
     {
 		Applicant::chunk(50, function($applicants) {
 		    $applicants->each(function($applicant) {
-			    $applicant->skills()->saveMany(factory(Skill::class, rand(5, 10))->make());
+			    $applicant->skills()->saveMany(factory(Skill::class, rand(2, 3))->make());
 		    });		    
 	    });
     }

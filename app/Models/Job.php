@@ -11,6 +11,11 @@ class Job extends Model
 		return $this->hasMany(Applicant::class);
 	}
 	
+	public function skills() 
+	{		
+		return $this->hasManyThrough(Skill::class, Applicant::class);
+	}
+	
 	public function user() 
 	{
 		return $this->belongsTo(User::class);

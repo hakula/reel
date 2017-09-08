@@ -15,6 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('test', function () {
+	
+	$user = Auth::user();		
+	$jobs = App\Models\Job::all();	
+			
+	return view('table', [
+		'user' => $user,
+		'jobs' => $jobs
+	]);
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

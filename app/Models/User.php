@@ -27,6 +27,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    public function applicants() 
+    {
+	    return $this->hasManyThrough(Applicant::class, Job::class);
+    }
+    
+    
     public function jobs()
     {
 	    return $this->hasMany(Job::class);
