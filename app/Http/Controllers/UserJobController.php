@@ -20,7 +20,10 @@ class UserJobController extends Controller
      */
     public function index(User $user)
     {
-		return view('users.jobs.list', ['jobs' => $user->jobs()->paginate(5)]);
+		return view('users.jobs.list', [
+			'user' => $user,
+			'jobs' => $user->jobs()->paginate(5)
+		]);
     }
 
     /**
@@ -28,9 +31,11 @@ class UserJobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $user)
     {
-        //
+		return view('users.jobs.create', [
+			'user' => $user,
+		]);
     }
 
     /**
@@ -39,9 +44,10 @@ class UserJobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, User $user)
+    {	    
+		$job = $user->jobs()->create($request->input('attributes'));
+		return redirect(sprintf('users/%s/jobs/%s', $user->id, $job->id));
     }
 
     /**
@@ -53,6 +59,7 @@ class UserJobController extends Controller
     public function show(User $user, Job $job)
     {
 		return view('users.jobs.show', [
+			'user' => $user,
 			'job' => $job,
 			'applicants' => $job->applicants()->paginate(5),			
 		]);
@@ -64,9 +71,12 @@ class UserJobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user, Job $job)
     {
-        //
+		return view('users.jobs.edit', [
+			'user' => $user,
+			'job' => $job,
+		]);
     }
 
     /**
@@ -76,9 +86,10 @@ class UserJobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user, Job $job)
     {
-        //
+		$job->update($request->input('attributes'));
+		return redirect(sprintf('users/%s/jobs/%s', $user->id, $job->id));
     }
 
     /**
