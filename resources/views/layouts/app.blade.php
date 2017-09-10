@@ -26,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+					
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
@@ -38,12 +38,14 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
+                    @auth
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-left">
 						<li>
 	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Jobs</a>
 	                    </li>
                     </ul>
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
