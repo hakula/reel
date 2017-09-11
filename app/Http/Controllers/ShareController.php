@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ShareController extends Controller
 {
+	/**
+     * Display the jobs for a given user.
+     *
+     * @param  User $user
+     * @return \Illuminate\Http\Response
+     */	
 	public function show(User $user) 
 	{
 		// Retrieve all jobs with their accompanying skills 		

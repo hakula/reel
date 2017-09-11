@@ -14,21 +14,23 @@ class UserJobController extends Controller
 	}
 	
     /**
-     * Display a listing of the resource.
+     * Display a listing of user jobs.
      *
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function index(User $user)
     {
 		return view('users.jobs.list', [
 			'user' => $user,
-			'jobs' => $user->jobs()->paginate(5)
+			'jobs' => $user->jobs()->orderBy('created_at', 'desc')->paginate(5)
 		]);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new job.
      *
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function create(User $user)
@@ -39,9 +41,10 @@ class UserJobController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created job in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, User $user)
@@ -51,9 +54,10 @@ class UserJobController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified job.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
     public function show(User $user, Job $job)
@@ -66,9 +70,10 @@ class UserJobController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified job.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user, Job $job)
@@ -80,10 +85,11 @@ class UserJobController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified job in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user, Job $job)
@@ -93,12 +99,13 @@ class UserJobController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified job from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user, Job $job)
     {
         //
     }

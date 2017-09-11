@@ -23,12 +23,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Resource Routes
-Route::resource('jobs', 'JobController');
-Route::resource('jobs.applicants', 'JobApplicantController');
+Route::resource('jobs.applicants', 'JobApplicantController', ['only' => [
+    'store'
+]]);
 Route::resource('users', 'UserController');
 Route::resource('users.jobs', 'UserJobController');
 Route::resource('users.applicants', 'UserApplicantController');
 
 // Public Share Route
 Route::get('shares/{guid}', 'ShareController@show');
-
