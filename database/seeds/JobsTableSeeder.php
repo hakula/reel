@@ -7,14 +7,15 @@ use Illuminate\Database\Seeder;
 
 class JobsTableSeeder extends Seeder
 {
-    /**
+	/**
      * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-	    User::chunk(50, function($users) {		    
+	    // Skip user with email joseph@josephcod.es as this user will have original data provided attached to it
+	    User::where('email', '!=', config('data.user.email'))->chunk(50, function($users) {
 		    $users->each(function($user) {
 			    // Create jobs and set an artificial creation date 
 			    $jobs = factory(Job::class, rand(2, 5))->make()

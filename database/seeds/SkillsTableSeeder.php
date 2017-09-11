@@ -5,7 +5,8 @@ use App\Models\Skill;
 use Illuminate\Database\Seeder;
 
 class SkillsTableSeeder extends Seeder
-{
+{	
+	
     /**
      * Run the database seeds.
      *
@@ -15,7 +16,10 @@ class SkillsTableSeeder extends Seeder
     {
 		Applicant::chunk(50, function($applicants) {
 		    $applicants->each(function($applicant) {
-			    $applicant->skills()->saveMany(factory(Skill::class, rand(2, 3))->make());
+			    // Only add data to users other than sample data user
+			    if($applicant->job->user->email != config('data.user.email')) {
+				    $applicant->skills()->saveMany(factory(Skill::class, rand(2, 3))->make());
+			    }			    
 		    });		    
 	    });
     }
