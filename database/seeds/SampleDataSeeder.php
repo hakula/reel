@@ -25,15 +25,18 @@ class SampleDataSeeder extends Seeder
 		    
 		    $user->save();
 		    
+		    // Insert jobs
 	        foreach(config('data.jobs') as $job) {
 				$job = new Job($job);		
 				$user->jobs()->save($job);
 			}
-		
+			
+			// Insert job applicants
 			foreach(config('data.applicants') as $applicant) {
 				Applicant::create($applicant);
 			}
 			
+			// Insert applicant skills
 			foreach(config('data.skills') as $skill) {
 				Skill::create($skill);
 			}
