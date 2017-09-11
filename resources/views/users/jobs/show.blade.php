@@ -6,10 +6,16 @@
 		{{ $job->name }} 
 		<span class="pull-right">
 			<a class="btn btn-primary" href="/users/{{ Auth::user()->id }}/jobs/{{ $job->id }}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+			<a class="btn btn-info" href="/jobs/{{ $job->id }}" target="_blank"><i class="fa fa-search" aria-hidden="true"></i> View</a>
 		</span>
 	</h1>
 </div>
-
+<div class="row">
+	<div class="col-sm-12">
+		{!! nl2br($job->description) !!}
+	</div>
+</div>
+<h3>Applicants</h3>
 <div class="panel-group panel-group-applicants" id="accordion-applicants" role="tablist" aria-multiselectable="true">
 	@foreach($applicants as $applicant)
 	<div class="panel panel-default panel-applicant">

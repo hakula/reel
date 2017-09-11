@@ -10,6 +10,12 @@
         {{ session('status') }}
     </div>
 @endif
+<div class="row">
+	<div class="col-md-12">
+		{!! nl2br($job->description) !!}
+	</div>
+</div>
+<h3>Application</h3>
 <!-- Job Applicant Form -->
 <form method="post" action="/jobs/{{ $job->id }}/applicants">
 	<div class="row">

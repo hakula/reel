@@ -9,11 +9,14 @@
 		<label for="exampleInputEmail1">Name</label>
 		<input type="text" class="form-control" id="name" name="attributes[name]" placeholder="Name">
 	</div>
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea class="form-control" id="description" name="attributes[description]" rows="3">{{ $job->description }}</textarea>		
+	</div>
 	<div class="form-group">		
 		<button type="submit" class="btn btn-primary">Submit</button>
 		<a class="btn btn-default" href="/users/{{ $user->id }}/jobs">Cancel</a>
 	</div>
 	{{ csrf_field() }}
 </form>
-
 @endsection
