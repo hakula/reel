@@ -50,7 +50,7 @@
 	                    </li>
 	                    @else 
 	                    <li>
-	                    	<a href="/jobs">Jobs</a>
+	                    	<a href="/jobs">Browse</a>
 	                    </li>
 	                    @endauth
                     </ul>
