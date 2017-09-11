@@ -27,8 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
-					
+                    </button>					
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="@guest {{ url('/') }} @else {{ url('/home') }} @endguest">
                         {{ config('app.name', 'Laravel') }}

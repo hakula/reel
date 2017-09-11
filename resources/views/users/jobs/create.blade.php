@@ -2,7 +2,7 @@
 
 @section('main')	
 <div class="page-header">
-		<h1>Add New Job</h1>		
+	<h1>Add New Job</h1>		
 </div>
 <form method="post" action="/users/{{ $user->id }}/jobs">	
 	<div class="form-group">

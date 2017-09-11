@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('test', function () {
-	
+
 	$user = Auth::user();		
 	$jobs = App\Models\Job::all();	
 			
@@ -33,3 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('jobs', 'JobController');
 Route::resource('jobs.applicants', 'JobApplicantController');
 Route::resource('users.jobs', 'UserJobController');
+
+
+Route::get('shares/{guid}', 'ShareController@show');
+Route::post('shares/{user}', 'ShareController@send')->middleware('auth');
