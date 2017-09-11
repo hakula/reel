@@ -11,18 +11,24 @@
 |
 */
 
+//  Landing Page
 Route::get('/', function () {
     return view('welcome');
 });
 
+// Login, Register, & Password
 Auth::routes();
 
+// Dahsboard 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Resource Routes
 Route::resource('jobs', 'JobController');
 Route::resource('jobs.applicants', 'JobApplicantController');
+Route::resource('users', 'UserController');
 Route::resource('users.jobs', 'UserJobController');
 Route::resource('users.applicants', 'UserApplicantController');
 
+// Public Share Route
 Route::get('shares/{guid}', 'ShareController@show');
 

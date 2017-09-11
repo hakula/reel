@@ -10,9 +10,9 @@
 	<div class="panel panel-default panel-applicant">
 		<div class="panel-heading panel-heading-applicant" role="tab" id="panel-heading-applicant-{{ $applicant->id }}">
 			<h4 class="panel-title">
-				<a role="button" data-toggle="collapse" data-parent="#accordion-applicants" href="#panel-collapse-applicant-{{ $applicant->id }}" aria-expanded="true" aria-controls="panel-collapse-applicant-{{ $applicant->id }}">
-					{{ $applicant->name }} 
-				</a>
+				<a role="button" data-toggle="collapse" data-parent="#accordion-applicants" href="#panel-collapse-applicant-{{ $applicant->id }}">
+					{{ $applicant->name }}
+				</a> 
 				<span class="label label-default">{{ $applicant->job->name }}</span>
 				<span class="pull-right">{{ $applicant->created_at->diffForHumans() }}</span>
 			</h4>
