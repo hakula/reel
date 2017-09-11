@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')	
+<!-- Header and Actions -->
 <div class="page-header">
 	<h1>
 		Jobs 
@@ -11,6 +12,7 @@
 		</span>
 	</h1>
 </div>
+<!-- Job Applicants -->
 <div class="panel panel-default">	            
 	<table class="table">
 	    <thead>
@@ -34,7 +36,7 @@
 {{ $jobs->links() }}
 
 @endsection
-
+<!-- Share Link Modal -->
 <div class="modal fade" id="modal-share" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

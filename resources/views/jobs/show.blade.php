@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
+<!-- Header -->
 <div class="page-header">
 	<h1>{{ $job->name }}</h1>
 </div>
@@ -10,6 +11,7 @@
     {{ session('status') }}
 </div>
 @endif
+<!-- Display errors -->
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>

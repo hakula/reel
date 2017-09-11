@@ -13,6 +13,11 @@ use SplTempFileObject;
 
 class UserJobController extends Controller
 {
+	/**
+     * Create a new UserJobController.
+     *     
+     * @return void
+     */
 	public function __construct()
 	{
 		// Protect routes

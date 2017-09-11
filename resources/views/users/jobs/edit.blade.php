@@ -1,9 +1,11 @@
 @extends('layouts.main')
 
 @section('main')
+<!-- Page Header -->
 <div class="page-header">
 	<h1>Edit Job <small></h1>
 </div>
+<!-- Display errors -->
 @if ($errors->any())
 <div class="alert alert-danger">
     <ul>
@@ -13,6 +15,7 @@
     </ul>
 </div>
 @endif
+<!-- Edit user job form -->
 <form method="post" action="/users/{{ $user->id }}/jobs/{{ $job->id }}">	
 	<div class="form-group">
 		<label for="name">Name</label>

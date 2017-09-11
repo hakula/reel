@@ -7,12 +7,18 @@ use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
-{    
+{   
+	/**
+     * Create a new UserController.
+     *     
+     * @return void
+     */ 
 	public function __construct() 
 	{
 		// Protect routes
 		$this->middleware('auth');
 	}
+	
     /**
      * Show the form for editing a user.
      *
