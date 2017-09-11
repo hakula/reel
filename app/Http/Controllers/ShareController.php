@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 
 class ShareController extends Controller
 {
-	public function send(Request $request, User $user) 
+	public function show(User $user) 
 	{
-		// Send notification
-	}
-	
-	public function show($guid) 
-	{
-		
+		return view('jobs.share', [
+			'user' => $user,
+			'jobs' => $user->jobs,
+		]);
 	}
 }
