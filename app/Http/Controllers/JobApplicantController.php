@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Applicant;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class JobApplicantController extends Controller
 {
-	public function __construct()
-	{
-	}
-	
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Job $job)
     {
         //
     }
@@ -26,9 +23,9 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Job $job)
     {
-        //
+		
     }
 
     /**
@@ -37,31 +34,37 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Job $job)
     {
-        //
+	    $applicant = $job->applicants()->create($request->input('attributes'));
+	    
+		$skills = str_replace("\r", '', $request->input('skills'));
+		
+	    foreach(explode(PHP_EOL, $skills) as $skill) {
+		    $applicant->skills()->create(['name' => $skill]);
+	    }
+	    
+	    return redirect(sprintf('jobs/%s', $job->id));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  Job $job
+     * @param  int  Job $job, Applicant $applicant
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show(Job $job, Applicant $applicant)
     {
-		return view('jobs.show', [
-			'job' => $job,
-		]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  Job $job
+     * @param  int  Job $job, Applicant $applicant
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit(Job $job, Applicant $applicant)
     {
         //
     }
@@ -70,10 +73,10 @@ class JobController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  Job $job
+     * @param  int  Job $job, Applicant $applicant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(Request $request, Job $job, Applicant $applicant)
     {
         //
     }
@@ -81,10 +84,10 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  Job $job
+     * @param  int  Job $job, Applicant $applicant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy(Job $job, Applicant $applicant)
     {
         //
     }

@@ -30,4 +30,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::resource('jobs', 'JobController');
+Route::resource('jobs.applicants', 'JobApplicantController');
 Route::resource('users.jobs', 'UserJobController');
