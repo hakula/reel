@@ -23,7 +23,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Resource Routes
-Route::resource('jobs', 'JobController');
+Route::resource('jobs', 'JobController', ['only' => [
+    'index',
+    'show',
+]]);
 Route::resource('jobs.applicants', 'JobApplicantController', ['only' => [
     'store'
 ]]);

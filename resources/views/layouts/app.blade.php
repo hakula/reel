@@ -38,18 +38,23 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
-                    </ul>
-                    @auth
+                    </ul>                    
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-left">
+	                    @auth
 						<li>
-	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Jobs</a>
+	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Browse</a>
 	                    </li>
 	                    <li>
 	                    	<a href="/users/{{ Auth::user()->id }}/applicants">Applicants</a>
 	                    </li>
+	                    @else 
+	                    <li>
+	                    	<a href="/jobs">Jobs</a>
+	                    </li>
+	                    @endauth
                     </ul>
-                    @endauth
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

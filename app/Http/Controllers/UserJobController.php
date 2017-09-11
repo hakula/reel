@@ -10,6 +10,7 @@ class UserJobController extends Controller
 {
 	public function __construct()
 	{
+		// Protect routes
 		$this->middleware('auth');
 	}
 	
