@@ -43,7 +43,7 @@
                     <ul class="nav navbar-nav navbar-left">
 	                    @auth
 						<li>
-	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Browse</a>
+	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Jobs</a>
 	                    </li>
 	                    <li>
 	                    	<a href="/users/{{ Auth::user()->id }}/applicants">Applicants</a>
