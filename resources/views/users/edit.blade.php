@@ -4,6 +4,15 @@
 <div class="page-header">
 	<h1>Settings <small></h1>
 </div>
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <!-- User Edit Form -->
 <form method="post" action="/users/{{ $user->id }}">
 	<div class="form-group">

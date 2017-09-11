@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class SampleDataSeeder extends Seeder
-{
+{	
     /**
      * Run the database seeds.
      *
@@ -15,20 +15,31 @@ class SampleDataSeeder extends Seeder
      */
     public function run()
     {
-	    $user = factory(User::class)->create();
-	    
-        foreach(config('data.jobs') as $job) {		
-			$job = new Job($job);		
-			$user->jobs()->save($job);
+	    // Skip if user already exists
+	    if(empty(User::where('email', config('data.user.email'))->first())) {    
+		    // Create user with hardcoded email to attach provided test data to
+		    $user = factory(User::class)->make([			    
+			    'name' => config('data.user.name'),
+			    'email' => config('data.user.email')
+		    ]);
+		    
+		    $user->save();
+		    
+		    // Insert jobs
+	        foreach(config('data.jobs') as $job) {
+				$job = new Job($job);		
+				$user->jobs()->save($job);
+			}
+			
+			// Insert job applicants
+			foreach(config('data.applicants') as $applicant) {
+				Applicant::create($applicant);
+			}
+			
+			// Insert applicant skills
+			foreach(config('data.skills') as $skill) {
+				Skill::create($skill);
+			}
 		}
-	
-		foreach(config('data.applicants') as $applicant) {
-			Applicant::create($applicant);
-		}
-		
-		foreach(config('data.skills') as $skill) {
-			Skill::create($skill);
-		}
-
     }
 }

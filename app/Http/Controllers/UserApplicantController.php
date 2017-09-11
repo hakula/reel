@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UserApplicantController extends Controller
 {
+	/**
+     * Create a new UserApplicantController.
+     *     
+     * @return void
+     */
 	public function __construct()
 	{
 		// Protect routes

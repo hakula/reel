@@ -3,15 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
-{    
+{   
+	/**
+     * Create a new UserController.
+     *     
+     * @return void
+     */ 
 	public function __construct() 
 	{
 		// Protect routes
 		$this->middleware('auth');
 	}
+	
     /**
      * Show the form for editing a user.
      *
@@ -19,7 +26,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
-    {
+    {	    
 		return view('users.edit', [
 			'user' => $user,
 		]);
@@ -32,13 +39,13 @@ class UserController extends Controller
      * @param  int  User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
 	    // Update user
 	    $user->update($request->input('attributes'));
 	    
-	    // Return to edit form
-	    return redirect(sprintf('/users/%s/edit', $user->id));
+	    // Return to dashboard
+	    return redirect('/home');
     }
 
     /**

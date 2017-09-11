@@ -10,7 +10,6 @@ class JobController extends Controller
 	/**
      * Display a listing of user jobs.
      *
-     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
     public function index()

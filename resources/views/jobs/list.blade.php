@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
 @section('main')	
+<!-- Header -->
 <div class="page-header">
 	<h1>
 		Jobs 		
 	</h1>
 </div>
+<!-- Paginated Jobs -->
 <div class="panel panel-default">	            
 	<div class="list-group">
 		@foreach($jobs as $job)

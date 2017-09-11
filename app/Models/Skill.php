@@ -13,6 +13,11 @@ class Skill extends Model
      */
     protected $guarded = [];
 	
+	/**
+     * Get skill applicant.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
 	public function applicant() 
 	{
 		return $this->belongsTo(Applicant::class);

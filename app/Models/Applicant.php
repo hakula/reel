@@ -13,11 +13,21 @@ class Applicant extends Model
      */
     protected $guarded = [];
 	
+	/**
+     * Get applicant job.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
 	public function job() 
 	{
 		return $this->belongsTo(Job::class);
 	}
 	
+	/**
+     * Get applicant skills.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
 	public function skills() 
 	{
 		return $this->hasMany(Skill::class);

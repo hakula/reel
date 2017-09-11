@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('main')	
+<!-- Header -->
 <div class="page-header">
 	<h1>
 		{{ $job->name }} 
@@ -10,12 +11,14 @@
 		</span>
 	</h1>
 </div>
+<!-- Job Description -->
 <div class="row">
 	<div class="col-sm-12">
 		{!! nl2br($job->description) !!}
 	</div>
 </div>
 <h3>Applicants</h3>
+<!-- Job Applicants -->
 <div class="panel-group panel-group-applicants" id="accordion-applicants" role="tablist" aria-multiselectable="true">
 	@foreach($applicants as $applicant)
 	<div class="panel panel-default panel-applicant">
