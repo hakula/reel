@@ -45,6 +45,9 @@
 						<li>
 	                    	<a href="/users/{{ Auth::user()->id }}/jobs">Jobs</a>
 	                    </li>
+	                    <li>
+	                    	<a href="/users/{{ Auth::user()->id }}/applicants">Applicants</a>
+	                    </li>
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->

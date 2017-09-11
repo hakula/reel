@@ -2,12 +2,7 @@
 
 @section('main')	
 <div class="page-header">
-	<h1>
-		{{ $job->name }} 
-		<span class="pull-right">
-			<a class="btn btn-primary" href="/users/{{ Auth::user()->id }}/jobs/{{ $job->id }}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-		</span>
-	</h1>
+	<h1>Applicants</h1>
 </div>
 
 <div class="panel-group panel-group-applicants" id="accordion-applicants" role="tablist" aria-multiselectable="true">
@@ -16,8 +11,9 @@
 		<div class="panel-heading panel-heading-applicant" role="tab" id="panel-heading-applicant-{{ $applicant->id }}">
 			<h4 class="panel-title">
 				<a role="button" data-toggle="collapse" data-parent="#accordion-applicants" href="#panel-collapse-applicant-{{ $applicant->id }}" aria-expanded="true" aria-controls="panel-collapse-applicant-{{ $applicant->id }}">
-					{{ $applicant->name }}
+					{{ $applicant->name }} 
 				</a>
+				<span class="label label-default">{{ $applicant->job->name }}</span>
 				<span class="pull-right">{{ $applicant->created_at->diffForHumans() }}</span>
 			</h4>
 		</div>
