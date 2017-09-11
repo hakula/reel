@@ -48,8 +48,11 @@ class UserJobController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, User $user)
-    {	    
+    {	
+	    // Store job
 		$job = $user->jobs()->create($request->input('attributes'));
+		
+		// Go to new job page
 		return redirect(sprintf('users/%s/jobs/%s', $user->id, $job->id));
     }
 
@@ -94,7 +97,10 @@ class UserJobController extends Controller
      */
     public function update(Request $request, User $user, Job $job)
     {
+	    // Update job
 		$job->update($request->input('attributes'));
+		
+		// Go to job page
 		return redirect(sprintf('users/%s/jobs/%s', $user->id, $job->id));
     }
 

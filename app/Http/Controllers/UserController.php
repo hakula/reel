@@ -29,7 +29,10 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+	    // Update user
 	    $user->update($request->input('attributes'));
+	    
+	    // Return to edit form
 	    return redirect(sprintf('/users/%s/edit', $user->id));
     }
 

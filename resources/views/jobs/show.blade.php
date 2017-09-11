@@ -1,11 +1,16 @@
 @extends('layouts.main')
 
 @section('main')
-
 <div class="page-header">
 	<h1>{{ $job->name }}</h1>
 </div>
-
+<!-- Display alert message -->
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
+<!-- Job Applicant Form -->
 <form method="post" action="/jobs/{{ $job->id }}/applicants">
 	<div class="row">
 		<div class="col-md-4">
@@ -47,5 +52,4 @@
 	</div>
 	{{ csrf_field() }}
 </form>
-
 @endsection
