@@ -30,9 +30,16 @@ Route::resource('jobs', 'JobController', ['only' => [
 Route::resource('jobs.applicants', 'JobApplicantController', ['only' => [
     'store'
 ]]);
-Route::resource('users', 'UserController');
+Route::resource('users', 'UserController', ['only' => [
+    'edit',
+    'update',
+    'destroy'
+]]);
 Route::resource('users.jobs', 'UserJobController');
-Route::resource('users.applicants', 'UserApplicantController');
+Route::resource('users.applicants', 'UserApplicantController', ['only' => [
+    'index'
+]]);
+
 
 // Public Share Route
 Route::get('shares/{guid}', 'ShareController@show');

@@ -4,6 +4,15 @@
 <div class="page-header">
 	<h1>Edit Job <small></h1>
 </div>
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 <form method="post" action="/users/{{ $user->id }}/jobs/{{ $job->id }}">	
 	<div class="form-group">
 		<label for="name">Name</label>

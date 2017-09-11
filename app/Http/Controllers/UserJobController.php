@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreJobRequest;
+use App\Http\Requests\UpdateJobRequest;
 
 class UserJobController extends Controller
 {
@@ -48,7 +50,7 @@ class UserJobController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user)
+    public function store(StoreJobRequest $request, User $user)
     {	
 	    // Store job
 		$job = $user->jobs()->create($request->input('attributes'));
@@ -96,8 +98,8 @@ class UserJobController extends Controller
      * @param  \App\Models\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user, Job $job)
-    {
+    public function update(UpdateJobRequest $request, User $user, Job $job)
+    {	    
 	    // Update job
 		$job->update($request->input('attributes'));
 		
