@@ -1,15 +1,18 @@
 @extends('layouts.main')
 
 @section('main')	
+<!-- Header and Actions -->
 <div class="page-header">
 	<h1>
 		Jobs 
-		<span class="pull-right">
-			<a class="btn btn-success" href="/users/{{ Auth::user()->id }}/jobs/create"><i class="fa fa-newspaper-o" aria-hidden="true"></i> New</a>
+		<span class="pull-right">		
+			<a class="btn btn-default" href="/users/{{ Auth::user()->id }}/jobs/export" data-toggle="modal"><i class="fa fa-share-square-o" aria-hidden="true"></i> Export</a>
 			<a class="btn btn-default" href="#modal-share" data-toggle="modal"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</a>
+			<a class="btn btn-success" href="/users/{{ Auth::user()->id }}/jobs/create"><i class="fa fa-newspaper-o" aria-hidden="true"></i> New</a>
 		</span>
 	</h1>
 </div>
+<!-- Job Applicants -->
 <div class="panel panel-default">	            
 	<table class="table">
 	    <thead>
@@ -33,7 +36,7 @@
 {{ $jobs->links() }}
 
 @endsection
-
+<!-- Share Link Modal -->
 <div class="modal fade" id="modal-share" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">

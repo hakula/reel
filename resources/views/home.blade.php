@@ -1,8 +1,10 @@
 @extends('layouts.main')
 
 @section('main')
+<!-- Dashboard Widgets -->
 <div class="row">
 	<div class="col-md-6">
+		<!-- Job and Applicant Counts -->
 		<div class="panel panel-default">
 		    <div class="panel-heading">Summary</div>
 		    <div class="panel-body">
@@ -18,6 +20,7 @@
 		</div>		
 	</div>
 	<div class="col-md-6">
+		<!-- Recent Activity / Aapplicants -->
 		<div class="panel panel-default">
 		    <div class="panel-heading">Activity</div>
 		    <ul class="list-group">
